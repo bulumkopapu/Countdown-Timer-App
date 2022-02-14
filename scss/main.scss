@@ -1,12 +1,89 @@
 @import 'reset';
 body {
-    @include fontFamilyLarge(bold);
-    background: $gradient;
+    background: $background;
     height: 100vh;
     overflow-x: hidden;
     padding: 0 24px 0 24px;
 }
 
+.star-image{
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    top: 0;
+    left: 0;
 
+    img{
+        height:100%;
 
+        @include image-responsive {
+            width: 100%;
+            height: 100%; 
+            object-fit: contain;
+        }
+    }
+}
+.mountain-image{
+    position: absolute;
+    z-index: -5;
+    width: 100%;
+    overflow-x: hidden;
+    top: 100vh;
+    margin-top: -200px;
+    left: 0;
 
+    @include desktop-screen {
+        
+    }
+
+    img{
+        @include image-responsive {
+            width: 100%;
+            height: 100%; 
+            object-fit: contain;
+        }
+    }
+}
+
+header {
+    h1{
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 142px;
+
+        @include desktop-screen {
+            margin-top: 132px;
+            @include font(22px, 29px, $white, 7.5px);
+        }
+    }
+}
+
+footer {
+    // display: flex;
+    // justify-content: center;
+    // margin-top: 405px;
+    position: absolute;
+    top: 100vh;
+    margin-top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include desktop-screen {
+        // margin-top: 540px;
+    }
+
+    .social{
+        width: 136px;
+        display: flex;
+        justify-content: space-between;
+
+        img{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
